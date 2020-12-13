@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar prefHeight="51.0" prefWidth="640.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exportar" text="Exportar" />
+            <MenuItem mnemonicParsing="false" onAction="#importar" text="Importar" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#cambiarBD" text="Cambiar BBDD" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#volver" text="Volver" />
+            <MenuItem mnemonicParsing="false" onAction="#recuperar" text="Recuperar" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#borrarTodo" text="Borrar Todo" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="700.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="244.0" layoutY="224.0" text="Lista de Libros">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="70.0" text="Título" />
+            <Label layoutX="72.0" layoutY="105.0" text="Autor" />
+            <Label layoutX="73.0" layoutY="141.0" text="ISBN" />
+            <ComboBox fx:id="cbGenero" layoutX="141.0" layoutY="175.0" prefHeight="25.0" prefWidth="239.0" />
+            <Label layoutX="72.0" layoutY="179.0" text="Género" />
+            <TextField fx:id="tfIsbn" layoutX="142.0" layoutY="137.0" prefHeight="25.0" prefWidth="239.0" />
+            <TextField fx:id="tfAutor" layoutX="142.0" layoutY="101.0" prefHeight="25.0" prefWidth="239.0" />
+            <TextField fx:id="tfTitulo" layoutX="142.0" layoutY="66.0" prefHeight="25.0" prefWidth="239.0" />
+            <Button fx:id="btNuevo" layoutX="427.0" layoutY="66.0" mnemonicParsing="false" onAction="#nuevoLibro" prefWidth="70.0" text="Nuevo" />
+            <Button fx:id="btModificar" layoutX="427.0" layoutY="101.0" mnemonicParsing="false" onAction="#modificarLibro" prefWidth="70.0" text="Modificar" />
+            <Button fx:id="btEliminar" layoutX="526.0" layoutY="101.0" mnemonicParsing="false" onAction="#eliminarLibro" prefWidth="70.0" text="Eliminar" />
+            <Label layoutX="268.0" layoutY="14.0" text="Biblioteca">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btGuardar" layoutX="526.0" layoutY="66.0" mnemonicParsing="false" onAction="#guardarLibro" prefWidth="70.0" text="Guardar" />
+            <TableView fx:id="tvRegistro" layoutX="20.0" layoutY="277.0" onMouseClicked="#seleccionarRegistro" prefHeight="285.0" prefWidth="600.0" />
+            <TextField fx:id="tfBuscar" layoutX="410.0" layoutY="175.0" prefHeight="25.0" prefWidth="104.0" promptText="Buscar título" />
+            <Button fx:id="btBuscar" layoutX="526.0" layoutY="175.0" mnemonicParsing="false" onAction="#buscar" prefWidth="70.0" text="Buscar" />
+            <Button fx:id="btCancelar" layoutX="526.0" layoutY="137.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="70.0" text="Cancelar" />
+         </children>
+    </AnchorPane>
+      <Label fx:id="lbInfo" prefHeight="17.0" prefWidth="600.0">
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+  </children>
+</VBox>
